@@ -1,43 +1,89 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f8ff;
-    margin: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-h1 {
-    color: #2c3e50;
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-p {
-    font-size: 18px;
-    color: #555;
+nav {
+  margin-top: 10px;
 }
 
-a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    text-decoration: none;
-    background-color: #3498db;
-    color: white;
-    border-radius: 5px;
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-a:hover {
-    background-color: #1d6fa5;
+section {
+  padding: 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, button {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #1e8449;
+  background-color: #2980b9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #ecf0f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-left: 5px solid #3498db;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "contact todo";
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  #contact {
+    grid-area: contact;
+  }
+
+  #todo {
+    grid-area: todo;
+  }
 }
